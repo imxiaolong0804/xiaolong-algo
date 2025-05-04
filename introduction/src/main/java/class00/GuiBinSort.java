@@ -11,7 +11,6 @@ import java.util.Arrays;
  */
 public class GuiBinSort {
 
-
     public static void main(String[] args) {
         int[] array = GeneraticRandomArray.generateRandomArray(10, 50);
         guiBin(array, 0, array.length - 1);
@@ -34,8 +33,8 @@ public class GuiBinSort {
 
         int[] helper = new int[r - l + 1];
         int i = 0;
-        int p1 = l;
-        int p2 = m + 1;
+        int p1 = l; // 左边部分的起始位置
+        int p2 = m + 1; // 右边部分的起始位置
         while (p1 <= m && p2 <= r) {
             helper[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
         }
@@ -45,8 +44,6 @@ public class GuiBinSort {
         while (p2 <= r) {
             helper[i++] = arr[p2++];
         }
-        for (int k = 0; k < helper.length; k++) {
-            arr[l + k] = helper[k];
-        }
+        System.arraycopy(helper, 0, arr, l, helper.length);
     }
 }

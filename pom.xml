@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>introduction</module>
+        <module>improvement</module>
+        <module>LeetCode</module>
     </modules>
 
     <properties>

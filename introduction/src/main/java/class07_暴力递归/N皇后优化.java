@@ -35,7 +35,7 @@ public class N皇后优化 {
         int mostRightOne = 0;
         while (pos != 0) {
             // 这里根据之前学的，选出最右边的一个1占位表示选择这个点位皇后点
-            mostRightOne = pos & (~pos - 1);
+            mostRightOne = pos & (~pos + 1);
             // 更新可选点
             pos = pos - mostRightOne;
             res += process2(limit, collim | mostRightOne,

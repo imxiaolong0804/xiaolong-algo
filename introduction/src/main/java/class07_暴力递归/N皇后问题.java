@@ -28,7 +28,7 @@ public class N皇后问题 {
         for (int j = 0; j < records.length; j++) {
             if (isValid(records, i, j)) {
                 records[i] = j;
-                process(i + 1, records);
+                res += process(i + 1, records);
             }
         }
         return res;
